@@ -1,0 +1,7 @@
+node_modules
+temp
+.vscode
+.idea
+.git
+README.md
+reports

@@ -1,0 +1,111 @@
+.main-container {
+  background-color: rgba(0, 153, 255, 0.1);
+}
+
+.form-container {
+  padding: 25px;
+  margin-top: 20px;
+  border: 3px solid rgba(0, 153, 255, 0.2);
+  border-radius: 5px;
+  background-color: rgba(0, 153, 255, 0.1);
+}
+
+.request-container {
+  margin-top: 20px;
+}
+
+.request-container__btn {
+  width: 100%;
+}
+
+.report-form {
+  margin-top: 20px;
+}
+
+.report-form__item {
+  margin-top: 20px;
+  padding: 20px;
+  border: 3px solid rgba(0, 153, 255, 0.2);
+  border-radius: 5px;
+}
+
+/* .input-sources {
+  padding: 20px;
+} */
+
+.input-sources__legend {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.reattr {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reattr__select {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+.reattr__label {
+  margin: 0;
+}
+
+.request-url,
+.request-result {
+  word-wrap: break-word;
+}
+
+.spinner-container {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.request-result {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* json-pretty-html */
+.json-pretty {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.json-selected {
+  background-color: rgba(139, 191, 228, 0.2);
+}
+
+.json-string {
+  color: #023459;
+}
+
+.json-key {
+  color: #99050e;
+}
+
+.json-boolean {
+  color: #0b6102;
+}
+
+.json-number {
+  color: #0b6102;
+}
+
+.hide {
+  display: none;
+}
+
+.wrapper-logs {
+  margin-top: 25px;
+}
+
+.logs-show-btn {
+  width: 100%;
+}

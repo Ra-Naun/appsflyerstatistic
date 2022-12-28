@@ -1,0 +1,14 @@
+{
+  "restartable": "rs",
+  "ignore": [".git", "node_modules", "reports"],
+  "verbose": true,
+  "ext": "js",
+  "exec": "yarn sequelize db:migrate --config=./config/db.js --models-path=./server/DB/models --seeders-path=./server/DB/seeders --migrations-path=./server/DB/migrations && node ./server/run.js",
+  "env": { },
+  "watch": [
+    "services",
+    "server",
+    "config",
+    "utils"
+  ]
+}

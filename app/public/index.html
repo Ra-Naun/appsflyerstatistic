@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link href="./normolize.css" rel="stylesheet" type="text/css" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+
+    <link href="./index.css" rel="stylesheet" type="text/css" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <title>Appsflyer Statistic Loader</title>
+  </head>
+  <body>
+    <div class="container main-container">
+      <h1>Appsflyer Statistic Loader</h1>
+
+      <div class="form-container">
+        <h3 class="request-params">Request params:</h3>
+
+        <form action="/" class="report-form">
+          <fieldset class="report-form__item input-sources">
+            <div class="input-sources__legend">source:</div>
+            <div class="form-check">
+              <input
+                class="form-check-input input-source1"
+                type="radio"
+                name="input-source"
+                id="input-source1"
+                value="get_app-id-in-app-events-report-v5"
+                checked
+              />
+              <label class="form-check-label" for="input-source1">
+                get_app-id-in-app-events-report-v5
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input
+                class="form-check-input input-source2"
+                type="radio"
+                name="input-source"
+                id="input-source2"
+                value="get_app-id-organic-in-app-events-report-v5"
+              />
+              <label class="form-check-label" for="input-source2">
+                get_app-id-organic-in-app-events-report-v5
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="btn-group reattr btn report-form__item">
+            <label class="reattr__label" for="select-reattr">reattr:</label>
+            <select class="reattr__select" name="select-reattr" id="select-reattr">
+              <option class="reattr__option dropdown-item" value="false">false</option>
+              <option class="reattr__option dropdown-item" value="true">true</option>
+            </select>
+          </div>
+
+          <div class="form-group report-form__item">
+            <label for="input-appID">appID:</label>
+            <input
+              type="text"
+              id="input-appID"
+              class="form-control input-appID"
+              placeholder="example: tech.studio3.bestcave"
+            />
+          </div>
+
+          <div class="form-group report-form__item">
+            <label for="input-from">from:</label>
+            <input
+              type="text"
+              id="input-from"
+              class="form-control input-from"
+              placeholder="example: 2022-12-15"
+            />
+          </div>
+
+          <div class="form-group report-form__item">
+            <label for="input-to">to:</label>
+            <input
+              type="text"
+              id="input-to"
+              class="form-control input-to"
+              placeholder="example: 2022-12-15"
+            />
+          </div>
+
+          <div class="form-group report-form__item">
+            <label for="input-event_name">event_name:</label>
+            <input
+              type="text"
+              id="input-event_name"
+              class="form-control input-event_name"
+              placeholder="example: AdImpression,af_purchase,Player.Login,..."
+            />
+          </div>
+
+          <div class="form-group report-form__item">
+            <label for="input-geo">geo:</label>
+            <input
+              type="text"
+              id="input-geo"
+              class="form-control input-geo"
+              placeholder="example: US"
+            />
+          </div>
+
+          <div class="form-group report-form__item">
+            <label for="input-apiToken">apiToken:</label>
+            <input
+              type="text"
+              id="input-apiToken"
+              class="form-control input-apiToken"
+              placeholder="example: oH0K0EMvfi3Q1jLi0JPoot49yRLNUTdtAc..."
+            />
+          </div>
+
+          <br />
+        </form>
+
+        <div class="request-url">
+          <span class="request-url__title">Request Url:</span>
+          <span class="request-url__value">[slot - url]</span>
+        </div>
+
+        <div class="request-container">
+          <button type="button" class="btn btn-primary request-container__btn">Request</button>
+        </div>
+
+        <div class="spinner-container hide">
+          <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+
+        <div class="report-form__item wrapper-request-result hide">
+          <span class="request-result">[slot - request result]</span>
+        </div>
+
+        <div class="wrapper-logs">
+          <p>
+            <button
+              class="btn btn-primary logs-show-btn"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#logs-body"
+              aria-expanded="false"
+              aria-controls="logs-body"
+            >
+              Show logs...
+            </button>
+          </p>
+          <div class="collapse wrapper-logs-body" id="logs-body">
+            <div class="card card-body logs-body">[slot - logs]</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
